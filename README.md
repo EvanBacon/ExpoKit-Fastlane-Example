@@ -51,7 +51,7 @@ $ Hit enter a bunch of times
 
 ```
 
-At this point you should have a new folder `ios/fastlane/` with a `Fastfile` & `Appfile`. Ideally we want a `Matchfile` & `Deliverfile` too.
+At this point you should have a new folder `ios/fastlane/` with a `Fastfile` & `Appfile`. Ideally we want a `Deliverfile` & `Matchfile` too.
 
 If you hit the bundle ID snag then you need to create an app in AppstoreConnect (formerly iTunes Connect). This is very easy. (or at least it should be) You may need to sign in to your account, sometimes it'll just auto authenticate.
 
@@ -74,7 +74,58 @@ ios $ fastlane deliver init
 
 You may need to sign in, note that I'm running all of these commands in `ios/`. If you don't then you will need to specify the bundle ID. This will be a good time to `git commit`
 
+At this point you can type `fastlane deliver` and it will push all of the blank metadata to the App Store entry.
+
+Now we need to do our code signing. If you know any iOS developer, you've probably seen the sadness luming deep in their eyes. This is because of a complex digital signature system that is not quite the most user friendly and has a few less-than simple steps ... it's fucking bullshit.
+
+But we can skip the entire process with one line.
+
+> BTW you can check out the [offical guide here](https://docs.fastlane.tools/actions/match/#setup) this step isn't React Native or Expo specific so do you
+
+```
+fastlane match init
+```
+
+This will ask you for the URL to a **private** Repo. I think you can get a free one on gitlab. If you have a paid Github account you can make as many as you want. Name it something like `project-certificates` or whatever you want.
+
+If your computer is setup with SSH then you should use the git URL, otherwise the https one is aight too.
+
+```
+> URL of the Git Repo: git@github.com:EvanBacon/expokit-fastlane-example-certificates.git
+```
+
+Now you should have a `ios/Matchfile`
+
+Just to be safe, make sure your "Automatically manage signing" option in the general tab of your XCWorkspace project is **UNCHECKED**
+
+> > > > > > > > > > > > > > > > > ADD IMAGE :)
+
+Time to run
+
+```
+fastlane match appstore
+
+fastlane match development
+```
+
+> This will create a new certificate and provisioning profile (if required) and store them in your Git repo. If you previously ran match it will automatically install the existing profiles from the Git repo.
+> The provisioning profiles are installed in ~/Library/MobileDevice/Provisioning Profiles while the certificates and private keys are installed in your Keychain.
+
 ## Doing more stuff...
+
+### Add a Deliverfile
+
+create a file `ios/Deliverfile` add whatever you want:
+I usually just do the following. The last line is really the only extra functionality, everything else is just convenient (which is pretty important if you're lazy and sloppy like me)
+
+```
+app_identifier "com.bacon.expokitfastlane" # The bundle identifier of your app
+username "evanjbacon@gmail.com" # your Apple ID user
+
+copyright "#{Time.now.year} Evan Bacon"
+```
+
+> I usually have a git submodule for `ios/fastlane/metadata/trade_representative_contact_information` because it's my business data and it never changes.
 
 > Sidenote: You can add patch functions to your Fastfile if you want
 
