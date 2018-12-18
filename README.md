@@ -136,6 +136,8 @@ Now you've `Successfully created new app 'ExpoKit Fastlane' on App Store Connect
 
 You won't see any git changes but if you go to [AppStore Connect](https://appstoreconnect.apple.com/) you should see a new app created and ready for you!
 
+![AppEntry](https://github.com/EvanBacon/ExpoKit-Fastlane-Example/blob/master/assets/itunesconnect.png?raw=true)
+
 ### Setup Metadata with Deliver
 
 This part is cool:
