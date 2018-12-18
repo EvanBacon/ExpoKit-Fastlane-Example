@@ -98,6 +98,8 @@ Now you should have a `ios/Matchfile`
 
 Just to be safe, make sure your "Automatically manage signing" option in the general tab of your XCWorkspace project is **UNCHECKED**
 
+If you've already messed with your signing then check out this neat command [**MATCH NUKE**](https://docs.fastlane.tools/actions/match/#nuke)
+
 > > > > > > > > > > > > > > > > > ADD IMAGE :)
 
 Time to run
@@ -105,11 +107,36 @@ Time to run
 ```
 fastlane match appstore
 
+> Passphrase for Git Repo:
+
+# [23:45:45]: All required keys, certificates and provisioning profiles are installed 🙌
+
+```
+
+Now run this (you need both)
+
+```
 fastlane match development
+
+# [23:46:48]: All required keys, certificates and provisioning profiles are installed 🙌
 ```
 
 > This will create a new certificate and provisioning profile (if required) and store them in your Git repo. If you previously ran match it will automatically install the existing profiles from the Git repo.
 > The provisioning profiles are installed in ~/Library/MobileDevice/Provisioning Profiles while the certificates and private keys are installed in your Keychain.
+
+### Basically all done
+
+Run `pod install` to download all of the libraries (you can do this whenever). After you do this you may notice a cluck-load of extra files in your git repo. Pods are like a less good version of NPM, if you are an old schooler than you probably don't like NPM already.
+
+TL;DR: [Cocoapods offically say "commit ur shit boi"](https://guides.cocoapods.org/using/using-cocoapods#should-i-check-the-pods-directory-into-source-control)
+
+But you should know, Cocoapods have a `.lock` file and can be regenerated. React Native pods are "development pods" and stored in the `node_modules` folders, so it's pretty up-in-the-air about if saving the pods in git are really worth it being that half of them can change without knowing (unless you also commit your `node_modules/`).
+
+I don't save them, I don't really mind being miserable.
+
+You can read more about git + cocoapods here: https://guides.cocoapods.org/using/using-cocoapods#should-i-check-the-pods-directory-into-source-control But keep in mind that this is mostly in regards to native only development and doesn't account for React Native.
+
+###
 
 ## Doing more stuff...
 
