@@ -4,10 +4,7 @@
     "slug": "expokit-fastlane-example",
     "privacy": "public",
     "sdkVersion": "31.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,12 +16,10 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.bacon.expokitfastlane",
+      "bundleIdentifier": "com.evanbacon.expokitfastlane",
       "publishBundlePath": "ios/expokit-fastlane-example/Supporting/shell-app.bundle",
       "publishManifestPath": "ios/expokit-fastlane-example/Supporting/shell-app-manifest.json"
     },
@@ -35,7 +30,7 @@
     },
     "scheme": "exp1d48cb1894444d81ae76b53afd67644d",
     "android": {
-      "package": "com.bacon.expokitfastlane",
+      "package": "com.evanbacon.expokitfastlane",
       "publishBundlePath": "android/app/src/main/assets/shell-app.bundle",
       "publishManifestPath": "android/app/src/main/assets/shell-app-manifest.json"
     }
