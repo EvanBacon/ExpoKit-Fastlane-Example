@@ -179,6 +179,8 @@ fastlane match init
 
 This will ask you for the URL to a **private** repo. I think you can get a free one on gitlab. If you have a paid Github account you can make as many as you want. (💪 don't wanna brag but... I don't like to pay for stuff)
 
+![repo](https://github.com/EvanBacon/ExpoKit-Fastlane-Example/blob/master/assets/github_repo.png?raw=true)
+
 Name the repo something like `project-certificates` or whatever you want.
 
 If your computer is setup with SSH then you should use the `git` URL, otherwise the `https` one is aight too.
