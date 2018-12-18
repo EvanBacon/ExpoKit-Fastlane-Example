@@ -193,11 +193,11 @@ If your computer is setup with SSH then you should use the `git` URL, otherwise 
 
 Now you should have a `ios/Matchfile`
 
-Just to be safe, make sure your "Automatically manage signing" option in the general tab of your `ios/<project>.xcworkspace` project is **UNCHECKED**
+Just to be safe, make sure your "Automatically manage signing" option in the general tab of your `ios/<project>.xcworkspace` project is **UNCHECKED** and after we run the next two commands, you'll want to select the eligible profiles.
 
 If you've already messed with your signing then check out this neat command [**MATCH NUKE**](https://docs.fastlane.tools/actions/match/#nuke)
 
-> > > > > > > > > > > > > > > > > ADD IMAGE :)
+![complex diagram](https://github.com/EvanBacon/ExpoKit-Fastlane-Example/blob/master/assets/fastlane_match.png?raw=true)
 
 ### Configure the Certs
 
