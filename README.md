@@ -142,7 +142,7 @@ You won't see any git changes but if you go to [AppStore Connect](https://appsto
 
 This part is cool:
 
-- [Here are the offical docs](https://docs.fastlane.tools/actions/deliver/#deliver)
+- [Here are the official docs](https://docs.fastlane.tools/actions/deliver/#deliver)
 - [Here is another one of my rants](https://blog.expo.io/manage-app-store-metadata-in-expo-with-fastlane-deliver-1c00e06b73bf)
 
 You can use this in vanilla Expo or ExpoKit!
@@ -165,7 +165,7 @@ At this point you can type `fastlane deliver` and it will push all of the blank 
 
 ### Code Sign with Match
 
-- [Here are the offical docs](https://docs.fastlane.tools/actions/match/#setup)
+- [Here are the official docs](https://docs.fastlane.tools/actions/match/#setup)
 
 Now we need to do our code signing. If you know any iOS developer, you've probably seen the sadness luming deep in their solemn gaze. This is because of iOS code signing; a digital signature system that has a few less-than simple steps.
 
@@ -242,7 +242,7 @@ In `ios/` run `pod install` to download all of the dependencies.
 
 ### Should I Commit the Pods
 
-_TL;DR_: [Cocoapods offically say "commit ur shit boi"](https://guides.cocoapods.org/using/using-cocoapods#should-i-check-the-pods-directory-into-source-control)
+_TL;DR_: [Cocoapods officially say "commit ur shit boi"](https://guides.cocoapods.org/using/using-cocoapods#should-i-check-the-pods-directory-into-source-control)
 
 After you install your libs you may notice a lot of extra files in your git repo. Cocoapods have a `ios/Podfile.lock` that is generated after running `pod install`, this file should always be committed. You can use this file to regenerate your `ios/Pods/` folder.
 React Native pods are usually always _"development pods"_ which means they are local. Specifically they are stored in the `node_modules` folders. Because of this, there is a lot of ambiguity over wheather or not you should commit the `ios/Pods/`.
