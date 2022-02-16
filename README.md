@@ -1,5 +1,8 @@
 # ExpoKit Fastlane
 
+> This project is deprecated in favor of `eas build` which does almost everything here automatically.
+> 
+
 You probably enjoy the luxurious `expo build:ios` command but if you upgrade/eject to add custom native modules then you need a new approach. Here is my favorite way to upload to the app store on iOS.
 
 > I use the `produce` & `deliver` steps in vanilla Expo too!
